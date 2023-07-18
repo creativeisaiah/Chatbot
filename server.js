@@ -30,9 +30,14 @@ app.post('/', async (req, res) => {
     try {
         const response = await fetch('https://api.openai.com/v1/chat/completions', options)
         const data = await response.json()
-        res.send(data);
+        if (!response.ok) {
+            res.status(response.status).send(data);
+        } else {
+            res.send(data);
+        }
     } catch (error) {
         console.error(error);
+        res.status(500).send({ error: 'An error occurred while processing your request.' });
     }
 })
 
