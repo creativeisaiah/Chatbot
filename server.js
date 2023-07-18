@@ -18,7 +18,7 @@ app.post('/', async (req, res) => {
     const options = {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${API_KEY}`,
+            "Authorization": `Bearer ${'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'}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
