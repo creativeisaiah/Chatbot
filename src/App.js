@@ -78,7 +78,7 @@ const [currentChatId, setCurrentChatId] = useState(0);
         method: "POST",
         body: JSON.stringify({
             messages: chats.find(chat => chat.id === currentChatId).messages.concat(messageFromUser), 
-        }, null, 2).trim(),
+        }, null, 2),
         headers: {
             "Content-Type": "application/json"
         }
