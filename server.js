@@ -14,7 +14,7 @@ app.get('/', async (req, res) => {
     })
         });
 
-app.post('/completions', async (req, res) => {
+app.post('/', async (req, res) => {
     const options = {
         method: "POST",
         headers: {
