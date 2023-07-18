@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: #343541;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+  /* display: flex; */
+  /* overflow: hidden; */
+}
+
+.side-bar{
+background-color: #202123;
+height: 100vh;
+width: 244px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+
+button {
+  border: solid 0.5px rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+nav {
+  border-top: solid 0.5px rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 10px;
+}
+
+.history {
+  padding: 10px;
+  margin: 10px;
+  height: 100%;
+}
+
+.history li {
+  list-style-type: none;
+  padding: 15px 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.history li:hover {
+  background-color: antiquewhite;
+  color: black;
+  border-radius: 5px;
+}
+
+.new-chat-button {
+  margin-left: 50px;
+}
+
+.new-chat-button:hover {
+  cursor: pointer;
+  background-color: antiquewhite;
+  color: black;
+}
+
+.main{
+  background-image: url('robot3.gif');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;/**/
+  transition: margin-left 0.3s ease-in-out;/**/
+  margin-left: 0;
+  
+}
+
+.info {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  padding: 10px;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+}
+
+textarea {
+  width: calc(100% - 50px); /* Decrease width to make space for the submit button */
+  height: 40px; /* Set a initial height */
+  border: none;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  padding-right: 50px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px,
+      rgba(0, 0, 0, 0.05) 0 -12px 30px,
+      rgba(0, 0, 0, 0.05) 0 4px 6px,
+      rgba(0, 0, 0, 0.05) 0 12px 3px,
+      rgba(0, 0, 0, 0.05) 0 -3px 5px;
+  resize: none;
+  /* overflow: auto;*/
+  white-space: wrap;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+#submit {
+  position: absolute;
+  bottom: 5px;
+  right: -9px; /* Change this value to position the button correctly */
+  cursor: pointer;
+}
+
+#submit:hover{
+  background-color: antiquewhite;
+  color: black;
+}
+
+.feed {
+  overflow-y: scroll;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.feed li{
+  display: flex;
+  
+  background: linear-gradient(135deg, rgba(68, 70, 84, 2), rgba(100, 102, 136, .1));
+  /* backdrop-filter: blur(10px); */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 17px;
+  
+}
+
+.feed pre {
+  display: flex;
+  justify-content: flex-start;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: left;
+  margin: 0 20px;
+  width: 100%;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.feed pre.role {
+  min-width: 100px;
+}
+
+
+
+.side-bar.hidden {
+  transform: translateX(-100%);
+}
+
+.main.collapsed {
+  margin-left: -244px;
+  margin-right: -244px;
+  width: 100vw;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 10px;
+}
+
+.sidebar-toggle:hover{
+  background-color: antiquewhite;
+  color: black;
+}
+
+@keyframes wavy {
+  0%, 100% { transform: translateY(0); }
+  25%, 75% { transform: translateY(-10px); }
+  50% { transform: translateY(10px); }
+}
+
+.loading span {
+  display: inline-block;
+  animation: wavy 1s infinite;
+  opacity: 100;
+}
