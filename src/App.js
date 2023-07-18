@@ -88,7 +88,10 @@ const [currentChatId, setCurrentChatId] = useState(0);
         const response = await fetch('https://chatbot-4r0s.onrender.com', options)
         const data = await response.json();
 
-        const messageFromAI = { role: "assistant", content: data.choices[0].message.content };
+        let messageFromAI = { role: "assistant", content: '' };
+if (data && data.choices && data.choices.length > 0) {
+  messageFromAI.content = data.choices[0].message.content;
+}
         setChats(chats => chats.map(chat => 
             chat.id === currentChatId 
               ? { ...chat, messages: [...chat.messages, messageFromAI] } 
