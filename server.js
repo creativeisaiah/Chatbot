@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const API_KEY = process.env.API_KEY
+const API_KEY = "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"
 
 app.get('/', async (req, res) => {
     res.status(200).send({
@@ -18,7 +18,7 @@ app.post('/', async (req, res) => {
     const options = {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${'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'}`,
+            "Authorization": `Bearer ${'API_KEY'}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
