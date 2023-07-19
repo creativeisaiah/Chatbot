@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const API_KEY = "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"
+const API_KEY = "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"
 
 app.get('/', async (req, res) => {
     res.status(200).send({
