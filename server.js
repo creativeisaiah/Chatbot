@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const API_KEY = process.env.API_KEY
+const OPENAI_API_KEY = process.env.API_KEY
 
 app.get('/', async (req, res) => {
     res.status(200).send({
@@ -18,7 +18,7 @@ app.post('/', async (req, res) => {
     const options = {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${'API_KEY'}`,
+            "Authorization": `Bearer ${'OPENAI_API_KEY'}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
