@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const API_KEY = "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"
+const API_KEY = process.env.API_KEY
 
 app.get('/', async (req, res) => {
     res.status(200).send({
